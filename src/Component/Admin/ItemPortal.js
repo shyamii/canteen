@@ -43,21 +43,23 @@ const styles = {
 const emptyItem = { name: "", price: "", quantity: "" };
 
 const ItemPortal = () => {
-  const [selectedItem, setSelectedItem] = useState();
+  const [selectedItem, setSelectedItem] = useState({});
   const [isSelecting, setIsSelecting] = useState(false);
   const [newItem, setNewItem] = useState(emptyItem);
   const [Items, setItems] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:3333/items").then((response) => {
-      console.log(response);
       setItems(response.data);
+    });
+
+    axios.get("http://localhost:3333/daySpecial").then((response) => {
+      setSelectedItem(response.data[0]);
     });
   }, []);
 
   useEffect(() => {
     axios.get("http://localhost:3333/items").then((response) => {
-      console.log(response);
       setItems(response.data);
     });
   }, [newItem]);
@@ -145,6 +147,9 @@ const ItemPortal = () => {
   const handleItemChange = (e) => {
     setSelectedItem(e.target.value);
     setIsSelecting(false);
+    axios.put("http://localhost:3333/daySpecial/1", {  "name": e.target.value.name,   "price": e.target.value.price,   "quantity": e.target.value.quantity}).then((response) => {
+
+    });
   };
 
   return (
@@ -267,8 +272,7 @@ const ItemPortal = () => {
             <Typography variant="h5">
               Item of the Day <StarIcon /> :{" "}
               {
-                selectedItem && selectedItem.name != null && selectedItem.name
-                // ||   Items[Items.length > 6 ? new Date().getDay() : 0].name
+                selectedItem  && selectedItem.name
               }
             </Typography>
             <Button

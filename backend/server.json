@@ -17,272 +17,50 @@
       "role": "admin",
       "emailAddress": "sk@gmail.com",
       "password": "12345678"
+    },
+    {
+      "id": "3",
+      "firstName": "prachi",
+      "lastName": "r",
+      "balance": 2000,
+      "role": "Admin",
+      "emailAddress": "pr@gmail.com",
+      "password": "12345678"
     }
   ],
   "items": [
     {
-      "id":1,
+      "id": 1,
       "name": "Dal Khichdi",
       "price": 100,
       "quantity": 10
     },
     {
-      "id":2,
+      "id": 2,
       "name": "Biryani",
       "price": 100,
       "quantity": 10
     },
     {
-      "id":3,
+      "id": 3,
       "name": "Methi Matar Malai",
       "price": 100,
       "quantity": 10
     },
     {
-      "id":4,
+      "id": 4,
       "name": "Paneer Kofta",
       "price": 100,
       "quantity": 10
     }
   ],
-  "transactions": [
+  "daySpecial": [
     {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Biryani",
+      "name": "Paneer Kofta",
+      "price": 100,
+      "quantity": 10,
       "id": 1
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Biryani",
-      "id": 2
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": "12",
-      "name": "new",
-      "id": 3
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": "12",
-      "name": "new",
-      "id": 4
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": "12",
-      "name": "new",
-      "id": 5
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 6
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 7
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 8
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": "12",
-      "name": "new",
-      "id": 9
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 10
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": "12",
-      "name": "new",
-      "id": 11
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": "12",
-      "name": "new",
-      "id": 12
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 13
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 14
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 15
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 16
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 17
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": "12",
-      "name": "new",
-      "id": 18
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 19
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 20
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 21
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 22
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 23
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 24
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 25
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Methi Matar Malai",
-      "id": 26
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 27
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 28
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 29
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 30
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 31
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 32
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 33
-    },
-    {
-      "employeeID": "1",
-      "eventTime": "Wed Mar 08 2023",
-      "amount": 100,
-      "name": "Paneer Kofta",
-      "id": 34
     }
-  ]
+  ],
+  "transactions": []
 }

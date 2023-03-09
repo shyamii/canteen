@@ -3,28 +3,37 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Button, Card, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
-import * as React from "react";
 import Swal from "sweetalert2";
 import { date } from "yup";
+import StarIcon from "@mui/icons-material/Star";
+import { useEffect, useState } from "react";
 
 export default function Menu() {
-  const [items, setItems] = React.useState([]);
+  const [items, setItems] = useState([]);
+  const [selectedItem, setSelectedItem] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState(
+    JSON.parse(sessionStorage.getItem("User"))
+  );
 
-  const [loggedInUser, setLoggedInUser] =  React.useState(JSON.parse(sessionStorage.getItem("User")))
-
-  React.useEffect(() => {
+  useEffect(() => {
     getItems();
+  }, []);
+
+  useEffect(() => {
+    axios.get("http://localhost:3333/daySpecial").then((response) => {
+      setSelectedItem(response.data[0]);
+    });
   }, []);
 
   const getLatestUserInfo = () => {
     axios
       .get("http://localhost:3333/Employees/" + loggedInUser.id)
       .then((response) => {
-          sessionStorage.setItem("User", JSON.stringify(response.data));
-          setLoggedInUser(response.data)
+        sessionStorage.setItem("User", JSON.stringify(response.data));
+        setLoggedInUser(response.data);
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
       });
   };
 
@@ -77,16 +86,15 @@ export default function Menu() {
 
   const buyClickHandler = (item) => {
     reduceItemQuantityByOne(item);
-    setTimeout(function() {
+    setTimeout(function () {
       addTransaction(item);
     }, 500);
-    setTimeout(function() {
+    setTimeout(function () {
       reduceBalance(item);
     }, 500);
-  
   };
 
-  const buyForEmployeeHandler = ()=>{
+  const buyForEmployeeHandler = () => {
     Swal.fire({
       title: "Employee Update Form",
       html: `
@@ -97,18 +105,14 @@ export default function Menu() {
       preConfirm: () => {
         const empId = Swal.getPopup().querySelector("#empId").value;
         if (!empId) {
-          Swal.showValidationMessage(
-            `Please enter empId`
-          );
+          Swal.showValidationMessage(`Please enter empId`);
         }
         return { empId };
       },
     }).then((result) => {
       console.log(result.value);
       axios
-        .put(
-          "http://localhost:3333/Employees/", result.value
-        )
+        .put("http://localhost:3333/Employees/", result.value)
         .then((response) => {
           Swal.fire("Updated!", "Employee data Updated.", "success");
           // getEmployeesData()
@@ -121,13 +125,16 @@ export default function Menu() {
           );
         });
     });
-  }
+  };
 
   return (
     <Box
       component="ul"
       sx={{ display: "flex", gap: 2, flexWrap: "wrap", p: 0, m: 0 }}
     >
+      <Typography variant="h5">
+        Item of the Day <StarIcon /> : {selectedItem && selectedItem.name}
+      </Typography>
       {items.map((item) => (
         <Card variant="outlined" sx={{ width: 320 }} key={item.id}>
           <Typography level="h2" fontSize="md" sx={{ mb: 0.5 }}>
